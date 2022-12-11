@@ -55,7 +55,7 @@ app.get('/', (req,res) => {
     res.json('Forgein Exchange Market News API')
 })
 
-app.get('babypips/babypips', (req,res) => {
+app.get('/babypips/babypips', (req,res) => {
     axios.get("https://www.babypips.com/news",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -76,7 +76,7 @@ app.get('babypips/babypips', (req,res) => {
     }).catch((err) => console.log(err))
 }),
 
-app.get('myfxbook/myfxbook', (req,res) => {
+app.get('/myfxbook/myfxbook', (req,res) => {
     axios.get("https://www.myfxbook.com/news",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -96,7 +96,7 @@ app.get('myfxbook/myfxbook', (req,res) => {
     }).catch((err) => console.log(err))
 }),
 
-app.get('fxnewsgroup/fxnewsgroup', (req,res) => {
+app.get('/fxnewsgroup/fxnewsgroup', (req,res) => {
     axios.get("https://fxnewsgroup.com/category/forex-news/",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -116,7 +116,7 @@ app.get('fxnewsgroup/fxnewsgroup', (req,res) => {
     }).catch((err) => console.log(err))
 }),
 
-app.get('dailyforex/dailyforex', (req,res) => {
+app.get('/dailyforex/dailyforex', (req,res) => {
     axios.get("https://www.dailyforex.com/forex-news/page-1",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -136,7 +136,7 @@ app.get('dailyforex/dailyforex', (req,res) => {
     }).catch((err) => console.log(err))
 }),
 
-app.get('investing/investing', (req,res) => {
+app.get('/investing/investing', (req,res) => {
     axios.get("https://www.investing.com/news/forex-news",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -156,7 +156,7 @@ app.get('investing/investing', (req,res) => {
     }).catch((err) => console.log(err))
 }),
 
-app.get('fx-markets/fx-markets', (req,res) => {
+app.get('/fx-markets/fx-markets', (req,res) => {
     axios.get("https://www.fx-markets.com/events",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -177,7 +177,7 @@ app.get('fx-markets/fx-markets', (req,res) => {
 }),
 
 
-app.get('fbs/fbs', (req,res) => {
+app.get('/fbs/fbs', (req,res) => {
     axios.get("https://fbs.eu/en/analytics/news/category/currencies",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -198,7 +198,7 @@ app.get('fbs/fbs', (req,res) => {
 }),
 
 
-app.get('forextime/forextime', (req,res) => {
+app.get('/forextime/forextime', (req,res) => {
     axios.get("https://www.forextime.com/market-analysis",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -218,7 +218,7 @@ app.get('forextime/forextime', (req,res) => {
     }).catch((err) => console.log(err))
 }),
 
-app.get('actionforex/actionforex', (req,res) => {
+app.get('/actionforex/actionforex', (req,res) => {
     axios.get("https://www.actionforex.com/",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
