@@ -56,6 +56,7 @@ app.get('/', (req,res) => {
 })
 
 app.get('/babypips/babypips', (req,res) => {
+const babypips = []
     axios.get("https://www.babypips.com/news",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -65,18 +66,19 @@ app.get('/babypips/babypips', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
              
-            articles.push({
+            babypips.push({
                 title,
                 url,
                 source: source["0"]
             
             })
         })
-        res.json(articles)
+        res.json(babypips)
     }).catch((err) => console.log(err))
 }),
 
 app.get('/myfxbook/myfxbook', (req,res) => {
+const myfxbook = []
     axios.get("https://www.myfxbook.com/news",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -86,17 +88,18 @@ app.get('/myfxbook/myfxbook', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            myfxbook.push({
                 title,
                 url,
                 source: source["1"]
             })
         })
-        res.json(articles)
+        res.json(myfxbook)
     }).catch((err) => console.log(err))
 }),
 
 app.get('/fxnewsgroup/fxnewsgroup', (req,res) => {
+const fxnewsgroup = []
     axios.get("https://fxnewsgroup.com/category/forex-news/",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -106,17 +109,18 @@ app.get('/fxnewsgroup/fxnewsgroup', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            fxnewsgroup.push({
                 title,
                 url,
                 source: source["2"]
             })
         })
-        res.json(articles)
+        res.json(fxnewsgroup)
     }).catch((err) => console.log(err))
 }),
 
 app.get('/dailyforex/dailyforex', (req,res) => {
+const dailyforex = []
     axios.get("https://www.dailyforex.com/forex-news/page-1",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -126,17 +130,18 @@ app.get('/dailyforex/dailyforex', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            dailyforex.push({
                 title,
                 url,
                 source: source["3"]
             })
         })
-        res.json(articles)
+        res.json(dailyforex)
     }).catch((err) => console.log(err))
 }),
 
 app.get('/investing/investing', (req,res) => {
+const investing = []
     axios.get("https://www.investing.com/news/forex-news",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -146,17 +151,18 @@ app.get('/investing/investing', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            investing.push({
                 title,
                 url,
                 source: source["4"]
             })
         })
-        res.json(articles)
+        res.json(investing)
     }).catch((err) => console.log(err))
 }),
 
 app.get('/fx-markets/fx-markets', (req,res) => {
+const fxmarkets = []
     axios.get("https://www.fx-markets.com/events",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -166,18 +172,19 @@ app.get('/fx-markets/fx-markets', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            fxmarkets.push({
                 title,
                 url,
                 source: source["5"]
             })
         })
-        res.json(articles)
+        res.json(fxmarkets)
     }).catch((err) => console.log(err))
 }),
 
 
 app.get('/fbs/fbs', (req,res) => {
+const fbs = []
     axios.get("https://fbs.eu/en/analytics/news/category/currencies",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -187,18 +194,19 @@ app.get('/fbs/fbs', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            fbs.push({
                 title,
                 url,
                 source: source["6"]
             })
         })
-        res.json(articles)
+        res.json(fbs)
     }).catch((err) => console.log(err))
 }),
 
 
 app.get('/forextime/forextime', (req,res) => {
+const forextime = []
     axios.get("https://www.forextime.com/market-analysis",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -208,17 +216,18 @@ app.get('/forextime/forextime', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            forextime.push({
                 title,
                 url,
                 source: source["7"]
             })
         })
-        res.json(articles)
+        res.json(forextime)
     }).catch((err) => console.log(err))
 }),
 
 app.get('/actionforex/actionforex', (req,res) => {
+const actionforex = []
     axios.get("https://www.actionforex.com/",{ headers: { 'Accept-Encoding': 'text/html; charset=UTF-8'}})
 
     .then((response) => {
@@ -228,13 +237,13 @@ app.get('/actionforex/actionforex', (req,res) => {
             const title = $(this).text()
              const url = $(this).attr("href")
             
-            articles.push({
+            actionforex.push({
                 title,
                 url,
                 source: source["8"]
             })
         })
-        res.json(articles)
+        res.json(actionforex)
     }).catch((err) => console.log(err))
 }),
 
